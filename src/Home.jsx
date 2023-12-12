@@ -8,7 +8,7 @@ import Portfolio from './components/Portfolio';
 function Home() {
 
   const [text,setText]=useState('')
-  const [isvisible,setVisible]=useState(false)
+  
   useEffect(()=>{
 
     const original = "Im a React , Tailwindcss  and C++ developer"
@@ -17,7 +17,7 @@ function Home() {
       setText(original.substring(0,currentIndex+1))
       currentIndex++;
       if(original.length==currentIndex){
-         setVisible(true);
+        
          clearInterval(interval)
       }
     },75)
@@ -30,9 +30,9 @@ function Home() {
    '> 
         <div className='max-w-screen-lg mx-auto flex flex-col 
          items-center justify-center h-full px-4 md:flex-row'>
-            <div className='flex flex-col justify-center h-full'>
+            <div className='flex flex-col justify-center h-full text-white'>
               <h2 className={`text-4xl sm:text-7xl text-white
-              font-bold ${isvisible ? 'opacity-100':'opacity-0'} transition-opacity duration-1000` }>{text}</h2>
+              font-bold  'opacity-100' transition-opacity duration-1000` }>{text}</h2>
               <p className={`text-gray-500 py-4 max-w-md `}>
                 I have some experience in Html ,Javascript and CSS
               </p>
